@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raices</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-white shadow-sm sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="index.html">
+          Métodos Numéricos
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#menuLateral"
+        >
+          <span class="navbar-toggler-icon"></span>
+          <span class="ms-2 fw-bold">MENÚ</span>
+        </button>
+      </div>
+    </nav>
+
+    <div
+      class="offcanvas offcanvas-end menu-lateral"
+      tabindex="-1"
+      id="menuLateral"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">MENÚ</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <a href="index.html">Inicio</a>
+        <a href="sistemas.html">Sistemas</a>
+        <a href="raices.html">Raíces</a>
+        <a href="interpolacion.html">Interpolación</a>
+        <a href="integracion.html">Integración</a>
+        <a href="edo.html">Ecuaciones Diferenciales Ordinarias</a>
+        <a href="rumores.html">Rumores y Perturbaciones</a>
+        <a href="difusion.html">Difusión Social</a>
+      </div>
+    </div>
+    <!---modulo 2 :)--->
+
+    <section class="container py-5">
+      <h2 class="titulo-seccion">Raíces de ecuaciones</h2>
+
+      <p>
+        Este módulo calcula un punto crítico o valor de equilibrio mediante
+        métodos de raíces: Bisección, Newton-Raphson y Secante.
+      </p>
+
+      <div class="card p-4 shadow">
+        <h3>Modelo de punto crítico</h3>
+
+        <p>
+          Función usada:
+          <strong>f(x) = x·e<sup>-x</sup> - 0.2</strong>
+        </p>
+
+        <label>Método numérico</label>
+        <select id="metodoRaiz" class="form-control">
+          <option value="biseccion">Bisección</option>
+          <option value="newton">Newton-Raphson</option>
+          <option value="secante">Secante</option>
+        </select>
+
+        <br />
+
+        <label>Valor a / x0</label>
+        <input
+          type="number"
+          id="valorA"
+          class="form-control"
+          value="0"
+          step="0.01"
+        />
+
+        <label>Valor b / x1</label>
+        <input
+          type="number"
+          id="valorB"
+          class="form-control"
+          value="0.5"
+          step="0.01"
+        />
+
+        <label>Tolerancia</label>
+        <input
+          type="number"
+          id="toleranciaRaiz"
+          class="form-control"
+          value="0.0005"
+          step="0.0001"
+        />
+
+        <br />
+
+        <button onclick="resolverRaiz()" class="btn btn-success">
+          Calcular raíz
+        </button>
+      </div>
+
+      <br />
+
+      <div class="card p-4 shadow">
+        <h3>Resultado</h3>
+        <div id="resultadoRaiz"></div>
+      </div>
+
+      <br />
+
+      <div class="card p-4 shadow">
+        <h3>Tabla de iteraciones</h3>
+
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Iteración</th>
+                <th>x anterior</th>
+                <th>x actual</th>
+                <th>f(x)</th>
+                <th>Error</th>
+              </tr>
+            </thead>
+            <tbody id="tablaRaiz"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="card p-4 shadow">
+        <h3>Gráfico de la función</h3>
+        <canvas id="graficoRaiz"></canvas>
+      </div>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
