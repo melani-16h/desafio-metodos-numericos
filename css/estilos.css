@@ -330,17 +330,18 @@ footer {
 }
 
 .hero-contenido h1 {
-  font-size: 4rem;
+  font-size: clamp(2rem, 6vw, 4rem);
   max-width: 1000px;
   font-weight: bold;
+  line-height: 1.15;
+  word-wrap: break-word;
 }
 
 .hero-contenido p {
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
   max-width: 700px;
   margin-top: 20px;
 }
-
 .hero-contenido .btn {
   margin-top: 30px;
 }
@@ -370,4 +371,28 @@ footer {
 .menu-lateral .offcanvas-body a:hover {
   color: #0389ff;
   padding-left: 10px;
+}
+
+@media (max-width: 576px) {
+  .hero-video {
+    height: 85vh;
+  }
+
+  .hero-contenido {
+    padding: 20px;
+  }
+
+  .hero-contenido h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero-contenido p {
+    font-size: 1rem;
+  }
+
+  .hero-contenido .btn {
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
 }
